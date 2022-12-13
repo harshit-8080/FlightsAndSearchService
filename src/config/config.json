@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "superpassword",
+    "database": "flight_search_db_Local",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
