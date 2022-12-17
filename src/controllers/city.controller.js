@@ -105,9 +105,9 @@ const searchCity = async (req,res) =>{
 
     try {
 
-        const city = req.query.city;
+        const filter = req.query.search;
 
-        const result = await cityObj.searchCites(city);
+        const result = await cityObj.searchCites(filter);
 
         return res.status(201).json({
 
