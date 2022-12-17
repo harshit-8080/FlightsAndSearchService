@@ -12,4 +12,6 @@ cityRouter.get("/cities/:id", cityController.getACity);
 
 cityRouter.patch("/cities/:id", cityController.updateCityName);
 
+cityRouter.get("/search/cities", cityController.searchCity);
+
 module.exports = cityRouter;
