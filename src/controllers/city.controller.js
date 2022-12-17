@@ -1,6 +1,6 @@
-const city = require("../services/city.service");
+const {cityService} = require("../services/index");
 
-const cityService = new city();
+const cityObj= new cityService();
 
 const createCity = async (req, res) => {
 
@@ -8,10 +8,15 @@ const createCity = async (req, res) => {
         const city = {
             name:req.body.name
         }
-        const result = await cityService.createCity(city);
+        const result = await cityObj.createCity(city);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"City Created Sucessfully",
+            err:{}
+
         })
 
     } catch (error) {
@@ -26,10 +31,14 @@ const getAllCity = async (req, res) => {
 
     try {
 
-        const result = await cityService.getAllCity();
+        const result = await cityObj.getAllCity();
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully fetched all cities",
+            err:{}
         })
 
     } catch (error) {
@@ -47,10 +56,14 @@ const getACity = async (req, res) => {
 
         const id = req.params.id;
 
-        const result = await cityService.getACity(id);
+        const result = await cityObj.getACity(id);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully fetched a city",
+            err:{}
         })
 
     } catch (error) {
@@ -69,10 +82,14 @@ const updateCityName = async (req, res) => {
         const id = req.params.id;
         const name = req.body.name;
 
-        const result = await cityService.updateCityName(id,name);
+        const result = await cityObj.updateCityName(id,name);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully updated City Name",
+            err:{}
         })
 
     } catch (error) {
