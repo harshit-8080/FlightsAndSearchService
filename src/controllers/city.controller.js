@@ -22,11 +22,32 @@ const createCity = async (req, res) => {
     }
 }
 
-const getCity = async (req, res) => {
+const getAllCity = async (req, res) => {
 
     try {
 
-        const result = await cityService.getCity();
+        const result = await cityService.getAllCity();
+
+        return res.status(201).json({
+            "msg":result
+        })
+
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error"
+        })
+    }
+
+}
+
+const getACity = async (req, res) => {
+
+    try {
+
+        const id = req.params.id;
+
+        const result = await cityService.getACity(id);
 
         return res.status(201).json({
             "msg":result
@@ -43,5 +64,6 @@ const getCity = async (req, res) => {
 
 module.exports = {
     createCity,
-    getCity
+    getAllCity,
+    getACity
 }
