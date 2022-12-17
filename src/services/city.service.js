@@ -16,7 +16,7 @@ class cityService {
 
     }
 
-    async getCity(){
+    async getAllCity(){
 
         try {
 

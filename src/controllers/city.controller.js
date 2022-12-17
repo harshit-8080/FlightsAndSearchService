@@ -22,11 +22,11 @@ const createCity = async (req, res) => {
     }
 }
 
-const getCity = async (req, res) => {
+const getAllCity = async (req, res) => {
 
     try {
 
-        const result = await cityService.getCity();
+        const result = await cityService.getAllCity();
 
         return res.status(201).json({
             "msg":result
@@ -43,5 +43,5 @@ const getCity = async (req, res) => {
 
 module.exports = {
     createCity,
-    getCity
+    getAllCity
 }
