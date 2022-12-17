@@ -101,9 +101,36 @@ const updateCityName = async (req, res) => {
 
 }
 
+const searchCity = async (req,res) =>{
+
+    try {
+
+        const city = req.query.city;
+
+        const result = await cityObj.searchCites(city);
+
+        return res.status(201).json({
+
+            data:result,
+            sucess:true,
+            message:"Successfully searched Cities",
+            err:{}
+        })
+
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error",
+            err:{error}
+        })
+    }
+
+}
+
 module.exports = {
     createCity,
     getAllCity,
     getACity,
-    updateCityName
+    updateCityName,
+    searchCity
 }

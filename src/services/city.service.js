@@ -1,4 +1,5 @@
 const {city} = require("../models/index");
+const { Op } = require("sequelize");
 
 class cityService {
 
@@ -58,6 +59,27 @@ class cityService {
         } catch (error) {
 
             throw error;
+        }
+
+    }
+
+    async searchCites(name){
+
+        try {
+
+            const response = await city.findAll({
+                where:{
+                    name:{
+                        [Op.like]: `${name}%`
+                    }
+                }
+            })
+
+            return response;
+
+        } catch (error) {
+
+            return error;
         }
 
     }
