@@ -38,3 +38,6 @@ module.exports = (sequelize, DataTypes) => {
   });
   return airport;
 };
+
+// npx sequelize model:generate --name airport --attributes name:string,address:string,cityID:integer
+// npx sequelize db:migrate  
