@@ -63,14 +63,14 @@ class cityService {
 
     }
 
-    async searchCites(name){
+    async searchCites(filter){
 
         try {
 
             const response = await city.findAll({
                 where:{
                     name:{
-                        [Op.like]: `${name}%`
+                        [Op.like]: `${filter}%`
                     }
                 }
             })
