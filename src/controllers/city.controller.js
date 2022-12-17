@@ -62,8 +62,31 @@ const getACity = async (req, res) => {
 
 }
 
+const updateCityName = async (req, res) => {
+
+    try {
+
+        const id = req.params.id;
+        const name = req.body.name;
+
+        const result = await cityService.updateCityName(id,name);
+
+        return res.status(201).json({
+            "msg":result
+        })
+
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error"
+        })
+    }
+
+}
+
 module.exports = {
     createCity,
     getAllCity,
-    getACity
+    getACity,
+    updateCityName
 }
