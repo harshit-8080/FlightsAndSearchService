@@ -29,6 +29,22 @@ class cityService {
         }
 
     }
+
+    async getACity(id){
+
+        try {
+
+            const response = await city.findByPk(id);
+            return response;
+
+        } catch (error) {
+
+            throw error;
+        }
+
+    }
+
+
 }
 
 module.exports = cityService;

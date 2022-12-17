@@ -8,4 +8,6 @@ cityRouter.post("/cities", cityController.createCity);
 
 cityRouter.get("/cities", cityController.getAllCity);
 
+cityRouter.get("/cities/:id", cityController.getACity);
+
 module.exports = cityRouter;

@@ -41,7 +41,29 @@ const getAllCity = async (req, res) => {
 
 }
 
+const getACity = async (req, res) => {
+
+    try {
+
+        const id = req.params.id;
+
+        const result = await cityService.getACity(id);
+
+        return res.status(201).json({
+            "msg":result
+        })
+
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error"
+        })
+    }
+
+}
+
 module.exports = {
     createCity,
-    getAllCity
+    getAllCity,
+    getACity
 }
