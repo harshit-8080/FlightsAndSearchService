@@ -11,7 +11,12 @@ const createCity = async (req, res) => {
         const result = await cityObj.createCity(city);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"City Created Sucessfully",
+            err:{}
+
         })
 
     } catch (error) {
@@ -29,7 +34,11 @@ const getAllCity = async (req, res) => {
         const result = await cityObj.getAllCity();
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully fetched all cities",
+            err:{}
         })
 
     } catch (error) {
@@ -50,7 +59,11 @@ const getACity = async (req, res) => {
         const result = await cityObj.getACity(id);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully fetched a city",
+            err:{}
         })
 
     } catch (error) {
@@ -72,7 +85,11 @@ const updateCityName = async (req, res) => {
         const result = await cityObj.updateCityName(id,name);
 
         return res.status(201).json({
-            "msg":result
+
+            data:result,
+            sucess:true,
+            message:"Successfully updated City Name",
+            err:{}
         })
 
     } catch (error) {
