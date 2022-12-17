@@ -44,6 +44,24 @@ class cityService {
 
     }
 
+    async updateCityName(id,name){
+
+        try {
+
+            const response = await city.findByPk(id);
+            response.name = name;
+
+            await response.save();
+            
+            return response;
+
+        } catch (error) {
+
+            throw error;
+        }
+
+    }
+
 
 }
 
