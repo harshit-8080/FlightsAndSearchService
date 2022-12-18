@@ -15,30 +15,30 @@ module.exports = {
 
     await queryInterface.bulkInsert('airports',[
       {
-        name:"terminal 1",
-        address:"North Delhi",
-        cityID:1,
+        name:"jp 1",
+        address:"North Patna",
+        cityID:7,
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        name:"terminal 2",
-        address:"South Delhi",
-        cityID:1,
+        name:"jp 2",
+        address:"South Patna",
+        cityID:7,
         createdAt:new Date(),
         updatedAt:new Date()
       },
       { 
-        name:"terminal 3",
-        address:"West Delhi",
-        cityID:1,
+        name:"jp 3",
+        address:"West Patna",
+        cityID:7,
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        name:"terminal 4",
-        address:"East Delhi",
-        cityID:1,
+        name:"hp 4",
+        address:"East Patna",
+        cityID:7,
         createdAt:new Date(),
         updatedAt:new Date()
       }
