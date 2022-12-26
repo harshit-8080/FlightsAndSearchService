@@ -1,2 +1,2 @@
 # FlightsAndSearchService
-Flights and Search Service
+- flight and search service for airline booking system
