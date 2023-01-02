@@ -6,7 +6,7 @@ const createCity = async (req, res) => {
 
     try {
         const city = {
-            name:req.body.name
+            name:req.body.cityName
         }
         const result = await cityObj.createCity(city);
 
