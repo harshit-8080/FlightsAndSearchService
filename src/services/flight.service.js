@@ -33,14 +33,10 @@ class flightService {
         }
     }
 
-    async getFlightByFlightNumber(flightNumber){
+    async getFlightByID(id){
 
         try {
-            const flight = await flights.findOne({
-                where:{
-                    flightNumber:flightNumber
-                }
-            });
+            const flight = await flights.findByPk(id);
             return flight;
         } catch (error) {
             throw {error}
