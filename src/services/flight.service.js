@@ -12,23 +12,25 @@ class flightService {
         }
     }
 
-
-    async getFlightByID(id){
+    async getFlightByFlightNumber(flightNumber){
 
         try {
-            const flight = await flights.findByID(id);
+            const flight = await flights.findOne({
+                where:{
+                    flightNumber:flightNumber
+                }
+            });
             return flight;
         } catch (error) {
             throw {error}
         }
     }
 
-
-    async getAllFlights(fight){
+    async getAllFlights(){
 
         try {
-            const flights = await flights.find();
-            return flights;
+            const allFlight = await flights.findAll();
+            return allFlight;
         } catch (error) {
             throw {error}
         }

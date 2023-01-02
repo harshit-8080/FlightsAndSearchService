@@ -4,7 +4,7 @@ const {airplane} = require("../models/index");
 const {compareTime} = require("../utils/compareTime");
 const flightObj = new flightService();
 
-exports.test = async(req, res) => {
+exports.createFlight = async(req, res) => {
     
     try {
         
@@ -38,6 +38,52 @@ exports.test = async(req, res) => {
             data:response,
             sucess:true,
             message:"Flight Created Sucessfully",
+            err:{}
+
+        })
+        
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error"
+        })
+    }
+}
+
+exports.getFlight = async (req, res) => {
+
+    try {
+        
+       const flight = await flightObj.getFlightByFlightNumber(req.params.flightNumber);
+
+       return res.status(201).json({
+
+            data:flight,
+            sucess:true,
+            message:"Flight fetched Sucessfully",
+            err:{}
+
+        })
+        
+    } catch (error) {
+        console.log("Error = ",error);
+        return res.status(500).json({
+            "msg":"internal server error"
+        })
+    }
+}
+
+exports.getAllFlights = async (req, res) => {
+
+    try {
+        
+       const flights = await flightObj.getAllFlights();
+
+       return res.status(201).json({
+
+            data:flights,
+            sucess:true,
+            message:"Flight fetched 1 Sucessfully",
             err:{}
 
         })
