@@ -54,7 +54,7 @@ exports.getFlight = async (req, res) => {
 
     try {
         
-       const flight = await flightObj.getFlightByFlightNumber(req.params.flightNumber);
+       const flight = await flightObj.getFlightByID(req.params.flightId);
 
        return res.status(201).json({
 

@@ -6,7 +6,7 @@ const flightRouter = express.Router();
 
 flightRouter.post("/", flightController.createFlight);
 
-flightRouter.get("/:flightNumber", flightController.getFlight);
+flightRouter.get("/:flightId", flightController.getFlight);
 
 flightRouter.get("/all/flights", flightController.getAllFlights);
 
