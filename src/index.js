@@ -3,6 +3,7 @@ const express = require("express");
 const { PORT } = require("./config/serverConfig.js");
 
 const cityRouter = require("./routes/city.routes");
+const flightRouter = require("./routes/flight.routes");
 const {airport,city} = require("./models/index");
 
 const setUpAndStartServer = async() => {
@@ -11,10 +12,11 @@ const setUpAndStartServer = async() => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
     app.use("/api/v1.0",cityRouter);
+    app.use("/api/v1.0/flight",flightRouter);
     
     app.listen(PORT, async() => {
         console.log(`Server started at ${PORT}`);
-
+        console.clear();
         // TODD -> Remove all below codes
 
             // const a1 = await airport.findAll({
