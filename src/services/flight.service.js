@@ -67,6 +67,23 @@ class flightService {
             throw {error}
         }
     }
+
+    async updateFlight(flightId,data){
+
+        try {
+
+            const response = await flights.update(data,{
+                where:{
+                    id:flightId
+                }
+            });
+
+            return response;
+        } catch (error) {
+            throw {error}
+        }
+
+    }
 }
 
 
