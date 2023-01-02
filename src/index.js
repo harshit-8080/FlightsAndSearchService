@@ -15,8 +15,8 @@ const setUpAndStartServer = async() => {
     app.use("/api/v1.0/flight",flightRouter);
     
     app.listen(PORT, async() => {
-        console.log(`Server started at ${PORT}`);
         console.clear();
+        console.log(`Server started at ${PORT}`);
         // TODD -> Remove all below codes
 
             // const a1 = await airport.findAll({

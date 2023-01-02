@@ -12,4 +12,6 @@ flightRouter.get("/all/flights", flightController.getAllFlights);
 
 flightRouter.post("/fliter/flights", flightController.getFlightsByFliter);
 
+flightRouter.patch("/:flightId", flightController.updateFlight);
+
 module.exports = flightRouter;

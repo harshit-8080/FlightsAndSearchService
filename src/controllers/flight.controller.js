@@ -118,3 +118,28 @@ exports.getFlightsByFliter = async (req, res) => {
         })
     }
 }
+
+exports.updateFlight = async (req, res) => {
+
+    try {
+        
+        console.log(req.body);
+        
+        const response = await flightObj.updateFlight(req.params.flightId, req.body);
+ 
+        return res.status(201).json({
+ 
+             data:response,
+             sucess:true,
+             message:"Flight seat updated Sucessfully",
+             err:{}
+ 
+         })
+         
+     } catch (error) {
+         console.log("Error = ",error);
+         return res.status(500).json({
+             "msg":"internal server error"
+         })
+     }
+}
