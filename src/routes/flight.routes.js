@@ -10,4 +10,6 @@ flightRouter.get("/:flightNumber", flightController.getFlight);
 
 flightRouter.get("/all/flights", flightController.getAllFlights);
 
+flightRouter.post("/fliter/flights", flightController.getFlightsByFliter);
+
 module.exports = flightRouter;
